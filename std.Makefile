@@ -69,7 +69,9 @@ SOURCES += $(APPSRC)/devEpidFast.c
 SOURCES += $(APPSRC)/devTimeOfDay.c 
 SOURCES += $(APPSRC)/pvHistory.c
 SOURCES += $(APPSRC)/femto.st
+SOURCES += $(APPSRC)/delayDo.st
 SOURCES += $(APPSRC)/delayCmd.cpp
+
 
 # DBDINC_SRCS should be last of the series of SOURCES
 SOURCES += $(DBDINC_SRCS)
