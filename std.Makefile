@@ -79,41 +79,17 @@ SOURCES += $(DBDINC_SRCS)
 DBDS += $(APPSRC)/delayDo.dbd
 DBDS += $(APPSRC)/stdSupport.dbd
 
-# DBDS += $(APPSRC)/calcSupport_withSNCSEQ.dbd
-# DBDS += $(APPSRC)/calcSupport_withSSCAN.dbd
-
 # SCRIPTS += showBurtDiff wrapCmd wrapper
 
 $(DBDINC_DEPS): $(DBDINC_HDRS)
 
 .dbd.h:
-	$(DBTORECORDTYPEH)  $(USR_DBDFLAGS) -o  $<
-
-
-# The following lines could be useful if one uses the external lib
-#
-# Examples...
-# 
-# USR_CFLAGS += -fPIC
-# USR_CFLAGS   += -DDEBUG_PRINT
-# USR_CPPFLAGS += -DDEBUG_PRINT
-# USR_CPPFLAGS += -DUSE_TYPED_RSET
-# USR_INCLUDES += -I/usr/include/libusb-1.0
-# USR_LDFLAGS += -lusb-1.0
-# USR_LDFLAGS += -L /opt/etherlab/lib
-# USR_LDFLAGS += -lethercat
-# USR_LDFLAGS += -Wl,-rpath=/opt/etherlab/lib
-
-## SYSTEM LIBS 
-##
-# USR_LIBS += boost_regex
-# USR_LIBS += readline
-# USR_LIBS += xml2
-
-#
-
+	$(DBTORECORDTYPEH)  $(USR_DBDFLAGS) -o  $@ $<
 
 
 # db rule is the default in RULES_E3, so add the empty one
 
 db:
+
+
+.PHONY: db $(DBDINC_DEPS) .dbd.h
