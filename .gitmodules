@@ -1,4 +1,4 @@
 [submodule "std"]
 	path = std
 	url = https://github.com/epics-modules/std
-	ignore = all
+	ignore = dirty
