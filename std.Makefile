@@ -17,10 +17,14 @@
 # 
 # Author  : Jeong Han Lee
 # email   : han.lee@esss.se
-# Date    : Monday, September 10 09:47:41 CEST 2018
-# version : 0.0.2
+# Date    : Tuesday, September 18 11:56:47 CEST 2018
+# version : 0.0.3
 #
 #
+
+# LEGACY_RSET should be defined before driver.makefile
+# require-ess from 3.0.1
+LEGACY_RSET = YES
 
 where_am_I := $(dir $(abspath $(lastword $(MAKEFILE_LIST))))
 
