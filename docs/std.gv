@@ -4,7 +4,7 @@ base [label="base 7.0.3"]
 require [label="require 3.1.1"]
 ASYN [label="ASYN 4.36.0"]
 SEQUENCER [label="SEQUENCER 2.2.7"]
-std [label="std 3.6.1"]
+std [label="std 3.6.1-9838239"]
 base -> require -> { ASYN,SEQUENCER } ->  {  std  } 
 } 
 
