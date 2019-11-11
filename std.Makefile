@@ -1,4 +1,5 @@
 #
+#  Copyright (c) 2019            Jeong Han Lee
 #  Copyright (c) 2017 - Present  European Spallation Source ERIC
 #
 #  The program is free software: you can redistribute
@@ -16,16 +17,11 @@
 #
 # 
 # Author  : Jeong Han Lee
-# email   : han.lee@esss.se
-# Date    : Tuesday, September 18 11:56:47 CEST 2018
-# version : 0.0.3
+# email   : jeonghan.lee@gmail.com
+# Date    : Tuesday, September 17 21:21:33 CEST 2019
+# version : 0.0.4
 #
 #
-
-# LEGACY_RSET should be defined before driver.makefile
-# require-ess from 3.0.1
-LEGACY_RSET = YES
-
 where_am_I := $(dir $(abspath $(lastword $(MAKEFILE_LIST))))
 include $(E3_REQUIRE_TOOLS)/driver.makefile
 include $(E3_REQUIRE_CONFIG)/DECOUPLE_FLAGS
@@ -54,6 +50,8 @@ USR_INCLUDES += -I$(where_am_I)$(APPSRC)
 # USR_CPPFLAGS += -Wno-unused-variable
 # USR_CPPFLAGS += -Wno-unused-function
 # USR_CPPFLAGS += -Wno-unused-but-set-variable
+
+USR_CPPFLAGS += -DUSE_TYPED_RSET
 
 TEMPLATES += $(wildcard $(APPDB)/*.db)
 TEMPLATES += $(wildcard $(APPDB)/*.req)
